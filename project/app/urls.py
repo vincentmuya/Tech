@@ -3,9 +3,10 @@ from django.conf.urls.static import static
 from django.conf.urls import url
 from . import views
 
-urlpatterns=[
-    url(r'^$',views.index, name ='index'),
+urlpatterns = [
+    url(r'^$', views.index, name='index'),
+    url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$', views.article_detail, name='article_detail'),
 ]
 
 if settings.DEBUG:
-    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
