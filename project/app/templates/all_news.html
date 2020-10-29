@@ -1,4 +1,4 @@
-{% load static %}
+{%extends 'base.html'%} {% load static %} {%block content%} {% load bootstrap4 %} {{ block.super}}
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,8 +11,6 @@
 <body>
 
 <div class="card">
-    <h4>News</h4>
-    <a href="{%url 'all_news'%}"><h4 class="more_news">More News</h4></a>
   <div class="card-body">
       <div class="row">
       {% for article in articles %}
@@ -30,3 +28,4 @@
 </div>
 </body>
 </html>
+{%endblock%}
